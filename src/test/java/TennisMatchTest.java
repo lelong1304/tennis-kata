@@ -3,6 +3,7 @@ import org.kata.model.Player;
 import org.kata.model.TennisMatch;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class TennisMatchTest {
 
@@ -37,6 +38,7 @@ class TennisMatchTest {
         Player winner = match.play();
 
         assertEquals(PLAYER_A, winner.getName());
+        assertNotEquals(PLAYER_B, winner.getName());
     }
 
 }
