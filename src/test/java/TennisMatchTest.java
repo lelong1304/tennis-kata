@@ -10,7 +10,7 @@ class TennisMatchTest {
     public static final String PLAYER_B = "Player B";
 
     @Test
-    void should_player1_win() {
+    void should_player1_win_without_deuce() {
         String gameInputString = "ABABAA";
         TennisMatch match = new TennisMatch(gameInputString);
 
@@ -20,7 +20,7 @@ class TennisMatchTest {
     }
 
     @Test
-    void should_player2_win() {
+    void should_player2_win_without_deuce() {
     String gameInputString = "BABBAB";
         TennisMatch match = new TennisMatch(gameInputString);
 
