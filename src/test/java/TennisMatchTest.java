@@ -41,4 +41,14 @@ class TennisMatchTest {
         assertNotEquals(PLAYER_B, winner.getName());
     }
 
+    @Test
+    void should_player2_win_with_advantage() {
+        String gameInputString = "ABABABBAABBB";
+        TennisMatch match = new TennisMatch(gameInputString);
+
+        Player winner = match.play();
+
+        assertEquals(PLAYER_B, winner.getName());
+    }
+
 }
