@@ -49,6 +49,7 @@ class TennisMatchTest {
         Player winner = match.play();
 
         assertEquals(PLAYER_B, winner.getName());
+        assertNotEquals(PLAYER_A, winner.getName());
     }
 
 }
