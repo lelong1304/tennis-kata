@@ -3,8 +3,8 @@ import org.kata.model.Player;
 import org.kata.model.PointEnum;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.kata.model.PointEnum.FIFTEEN;
-import static org.kata.model.PointEnum.ZERO;
+import static org.kata.model.PointEnum.*;
+import static org.kata.model.StatusEnum.NO_WIN;
 
 class PlayerTest {
     @Test
@@ -25,6 +25,18 @@ class PlayerTest {
         PointEnum lastPoint = player.getLastPoint();
 
         assertEquals(FIFTEEN, lastPoint);
+    }
+
+    @Test
+    void should_play_ball_when_is_winning_ball_and_game_is_no_win() {
+        char tag = 'A';
+        Player player = new Player("Long LE", tag);
+        player.getPoints().add(ZERO);
+        player.getPoints().add(FIFTEEN);
+
+        player.playBall(tag, NO_WIN);
+
+        assertEquals(THIRTY, player.getLastPoint());
     }
 
 }
