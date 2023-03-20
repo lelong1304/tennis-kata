@@ -70,4 +70,19 @@ class PlayerTest {
         assertEquals(WIN, player.getLastPoint());
     }
 
+    @Test
+    void should_lost_advantage_when_not_winning_ball_and_game_is_advantage_for_another_player() {
+        char tag = 'A';
+        Player player = new Player("Long LE", tag);
+        player.getPoints().add(ZERO);
+        player.getPoints().add(FIFTEEN);
+        player.getPoints().add(THIRTY);
+        player.getPoints().add(FORTY);
+        player.getPoints().add(ADVANTAGE);
+
+        player.playBall('B', StatusEnum.ADVANTAGE);
+
+        assertEquals(FORTY, player.getLastPoint());
+    }
+
 }
