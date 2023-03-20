@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.kata.model.Player;
 import org.kata.model.PointEnum;
+import org.kata.model.StatusEnum;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.kata.model.PointEnum.*;
@@ -52,6 +53,21 @@ class PlayerTest {
         player.playBall(tag, DEUCE);
 
         assertEquals(ADVANTAGE, player.getLastPoint());
+    }
+
+    @Test
+    void should_win_game_when_is_winning_ball_and_game_is_advantage() {
+        char tag = 'A';
+        Player player = new Player("Long LE", tag);
+        player.getPoints().add(ZERO);
+        player.getPoints().add(FIFTEEN);
+        player.getPoints().add(THIRTY);
+        player.getPoints().add(FORTY);
+        player.getPoints().add(ADVANTAGE);
+
+        player.playBall(tag, StatusEnum.ADVANTAGE);
+
+        assertEquals(WIN, player.getLastPoint());
     }
 
 }
