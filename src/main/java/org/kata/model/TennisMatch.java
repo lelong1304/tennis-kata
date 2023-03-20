@@ -21,6 +21,13 @@ public class TennisMatch implements Match {
         gameStatus = NO_WIN;
     }
 
+    public TennisMatch(String gameInput, Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+        this.gameInput = gameInput;
+        gameStatus = NO_WIN;
+    }
+
     @Override
     public Player play() {
         for (int i = 0; i < gameInput.length(); i++) {
