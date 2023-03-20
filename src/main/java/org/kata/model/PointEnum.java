@@ -1,20 +1,19 @@
 package org.kata.model;
 
 public enum PointEnum {
-    ZERO(0),
-    FIFTEEN(15),
-    THIRTY(30),
-    FORTY(40),
-    ADVANTAGE(1),
-    WIN(2);
+    ZERO("0"),
+    FIFTEEN("15"),
+    THIRTY("30"),
+    FORTY("40"),
+    ADVANTAGE("Advantage"),
+    WIN("Win");
 
+    private final String pointValue;
 
-    private final int pointValue;
-
-    PointEnum(int pointValue) {
+    PointEnum(String pointValue) {
         this.pointValue = pointValue;
     }
-    public int getPointValue() {
+    public String getPointValue() {
         return pointValue;
     }
 

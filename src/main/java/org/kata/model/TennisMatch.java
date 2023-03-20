@@ -61,7 +61,10 @@ public class TennisMatch implements Match {
         if (hasWinner()) {
             out.println(getWinner().getName() + " wins the game");
         } else {
-            out.println(player1.getName() + " : " + player1.getLastPoint().name() + " / " + player2.getName() + " : " + player2.getLastPoint().name());
+            out.println(player1.getName() + " : " + player1.getLastPoint().getPointValue() + " / " + player2.getName() + " : " + player2.getLastPoint().getPointValue());
+            if (gameStatus == DEUCE) {
+                out.println(DEUCE);
+            }
         }
     }
 
