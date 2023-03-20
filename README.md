@@ -1,5 +1,5 @@
 # Tennis-kata 
-- Author Thanh Long (Long LE) Paris 20/03/2023
+- Author : Thanh Long (Long LE) Paris 20/03/2023
 - Reviewer : Arnaud MARY - Lead Chapter Fullstack at BforBank - France
 
 
