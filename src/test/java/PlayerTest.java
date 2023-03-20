@@ -85,4 +85,18 @@ class PlayerTest {
         assertEquals(FORTY, player.getLastPoint());
     }
 
+    @Test
+    void should_get_no_point_when_not_winning_ball_and_game_is_deuce() {
+        char tag = 'A';
+        Player player = new Player("Long LE", tag);
+        player.getPoints().add(ZERO);
+        player.getPoints().add(FIFTEEN);
+        player.getPoints().add(THIRTY);
+        player.getPoints().add(FORTY);
+
+        player.playBall('B', DEUCE);
+
+        assertEquals(FORTY, player.getLastPoint());
+    }
+
 }
